@@ -63,12 +63,12 @@ function _drush_csv_import_example_rows_batch($rows, $details, &$context) {
   }
 
   foreach ($rows as $row) {
-    $key = _drush_import_csv_row($row) ? 'success' : 'error';
+    $key = _drush_csv_import_example_process_row($row) ? 'success' : 'error';
     $context['results'][$key]++;
   }
 }
 
-function _drush_import_csv_row($row) {
+function _drush_csv_import_example_process_row($row) {
   // Do stuff. Returns TRUE when success, FALSE otherwise.
   print_r($row);
   return TRUE;
